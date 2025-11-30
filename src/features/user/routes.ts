@@ -1,11 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router';
-import UserView from './views/UserView.vue';
 
 const userRoutes: RouteRecordRaw[] = [
   {
     path: '/users',
     name: 'UserList',
-    component: UserView,
+    component: ()=> import('./views/UserView.vue'),
   },
 ];
 
