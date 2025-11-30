@@ -1,5 +1,5 @@
-import { AuthService as BaseAuthService } from '../generated/AuthService';
+import { AuthService as BaseAuthService } from './generated/services/AuthService';
 
 export class AuthService extends BaseAuthService {
-  // You can
+  // You can override methods here
 }

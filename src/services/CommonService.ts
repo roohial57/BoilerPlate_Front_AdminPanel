@@ -1,4 +1,4 @@
-import { CommonService as BaseCommonService } from '../generated/CommonService';
+import { CommonService as BaseCommonService } from './generated/services/CommonService.ts';
 
 export class CommonService extends BaseCommonService {
   // You can override methods here

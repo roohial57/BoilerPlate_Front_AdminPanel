@@ -16,6 +16,7 @@ generate({
   .then(() => {
     console.log('API client generated successfully!');
     generateExtendedServices();
+    fixIndexImports();
   })
   .catch((err) => {
     console.error('Generation failed:', err);
@@ -33,7 +34,7 @@ function generateExtendedServices() {
     if (!file.endsWith('Service.ts')) return;
 
     const serviceName = file.replace('.ts', '');
-    const baseImportPath = `../generated/${serviceName}`;
+    const baseImportPath = `./generated/services/${serviceName}`;
     const extendFilePath = path.join(extendDir, file);
 
     // اگر قبلاً ساخته شده، دوباره نساز
@@ -50,3 +51,20 @@ export class ${serviceName} extends Base${serviceName} {
     console.log(`Extended service created: ${file}`);
   });
 }
+
+function fixIndexImports() {
+  const indexPath = path.join(generatedDir, 'index.ts');
+
+  if (!fs.existsSync(indexPath)) {
+    console.warn('index.ts not found, skipping path fix.');
+    return;
+  }
+
+  let content = fs.readFileSync(indexPath, 'utf-8');
+
+  content = content.replace(/\.\/services/g, '..');
+
+  fs.writeFileSync(indexPath, content);
+  console.log('index.ts import paths fixed successfully.');
+}
+

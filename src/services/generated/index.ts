@@ -34,10 +34,10 @@ export type { UserItemDto } from './models/UserItemDto';
 export type { UserItemDtoPaginatedList } from './models/UserItemDtoPaginatedList';
 export type { VersionDto } from './models/VersionDto';
 
-export { AuthService } from './services/AuthService';
-export { CommonService } from './services/CommonService';
-export { EnumService } from './services/EnumService';
-export { PermissionService } from './services/PermissionService';
-export { PersonService } from './services/PersonService';
-export { RoleService } from './services/RoleService';
-export { UserService } from './services/UserService';
+export { AuthService } from '../AuthService';
+export { CommonService } from '../CommonService';
+export { EnumService } from '../EnumService';
+export { PermissionService } from '../PermissionService';
+export { PersonService } from '../PersonService';
+export { RoleService } from '../RoleService';
+export { UserService } from '../UserService';
