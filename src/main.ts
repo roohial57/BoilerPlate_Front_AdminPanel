@@ -30,6 +30,20 @@ async function initApp() {
   }
 
   const app = createApp(App);
+
+  // هندلر سراسری برای خطاها
+  app.config.errorHandler = (err, instance, info) => {
+    console.error('Global Error:', err);
+    console.error('Component:', instance);
+    console.error('Info:', info);
+
+    // می‌توانید ارورها را به سرور لاگینگ بفرستید
+    // sendErrorToServer(err);
+
+    // نمایش پیام کاربر پسند
+    alert('یک خطای ناگهانی رخ داده است!');
+  };
+
   app.use(createPinia());
   app.use(router);
   registerGlobalComponents(app);
