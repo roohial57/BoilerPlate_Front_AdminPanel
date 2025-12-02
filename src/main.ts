@@ -5,6 +5,7 @@ import router from './router';
 import registerGlobalComponents from './global-components';
 import { loadAppConfig } from './AppConfig';
 import { OpenAPI } from './services/generated/core/OpenAPI';
+import Notifications from './components/common/NotificationPlugin'
 
 async function initApp() {
   try {
@@ -47,6 +48,7 @@ async function initApp() {
   app.use(createPinia());
   app.use(router);
   registerGlobalComponents(app);
+  app.use(Notifications);
   app.mount('#app');
 }
 

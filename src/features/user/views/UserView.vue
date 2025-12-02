@@ -1,6 +1,9 @@
 <template>
   <div>
     <h2>User List</h2>
+    <button class="btn btn-default btn-block" @click="$notify({message:'ddd'})">
+      Top Left
+    </button>
     <UserList />
   </div>
 </template>

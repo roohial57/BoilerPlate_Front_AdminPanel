@@ -5,7 +5,7 @@ import userRoutes from './features/user/routes';
 const routes = [
   {
     path: '/',
-    redirect: '/auth',
+    redirect: '/users',
   },
   ...authRoutes,
   ...userRoutes,
