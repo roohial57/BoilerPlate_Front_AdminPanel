@@ -11,7 +11,7 @@ export class CommonService {
      * @returns VersionDto OK
      * @throws ApiError
      */
-    public static getApiCommonGetLastVersion(): CancelablePromise<VersionDto> {
+    public static getLastVersionApi(): CancelablePromise<VersionDto> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/Common/GetLastVersion',

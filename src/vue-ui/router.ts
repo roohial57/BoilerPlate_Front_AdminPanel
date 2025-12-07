@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouterOptions } from 'vue-router';
-import authRoutes from './features/auth/routes';
-import userRoutes from './features/user/routes';
+import authRoutes from './auth/routes';
+import userRoutes from './user/routes';
 
 const routes = [
   {

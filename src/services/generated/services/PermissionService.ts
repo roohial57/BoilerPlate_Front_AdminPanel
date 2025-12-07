@@ -11,7 +11,7 @@ export class PermissionService {
      * @returns AppPermissionTreeItem OK
      * @throws ApiError
      */
-    public static getApiPermissionGetList(): CancelablePromise<Array<AppPermissionTreeItem>> {
+    public static getListApi(): CancelablePromise<Array<AppPermissionTreeItem>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/Permission/GetList',

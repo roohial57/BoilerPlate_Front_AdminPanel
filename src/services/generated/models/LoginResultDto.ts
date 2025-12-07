@@ -4,7 +4,7 @@
 /* eslint-disable */
 export type LoginResultDto = {
     token?: string | null;
-    username?: string | null;
+    userName?: string | null;
     expireAt?: string;
 };
 

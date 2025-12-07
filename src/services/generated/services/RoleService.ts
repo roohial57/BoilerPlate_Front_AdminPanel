@@ -17,7 +17,7 @@ export class RoleService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postApiRoleCreate(
+    public static createApi(
         requestBody?: CreateRoleCommand,
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
@@ -36,7 +36,7 @@ export class RoleService {
      * @returns any OK
      * @throws ApiError
      */
-    public static deleteApiRoleDelete(
+    public static deleteApi(
         id: string = '0',
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -56,7 +56,7 @@ export class RoleService {
      * @returns RoleDto OK
      * @throws ApiError
      */
-    public static getApiRoleGetItem(
+    public static getItemApi(
         id: string = '0',
     ): CancelablePromise<RoleDto> {
         return __request(OpenAPI, {
@@ -80,7 +80,7 @@ export class RoleService {
      * @returns RoleListItemPaginatedList OK
      * @throws ApiError
      */
-    public static getApiRoleGetList(
+    public static getListApi(
         sortColumn?: string,
         sortType?: 'Ascending' | 'Descending' | 'Unspecified',
         filterQuery?: SpelQuery,
@@ -108,7 +108,7 @@ export class RoleService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiRoleUpdate(
+    public static updateApi(
         requestBody?: UpdateRoleCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -127,7 +127,7 @@ export class RoleService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiRoleUpdatePermissions(
+    public static updatePermissionsApi(
         requestBody?: UpdateRolePermissionsCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {

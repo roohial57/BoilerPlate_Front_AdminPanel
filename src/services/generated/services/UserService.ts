@@ -18,7 +18,7 @@ export class UserService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postApiUserCreate(
+    public static createApi(
         requestBody?: CreateUserCommand,
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
@@ -37,7 +37,7 @@ export class UserService {
      * @returns any OK
      * @throws ApiError
      */
-    public static deleteApiUserDelete(
+    public static deleteApi(
         id: string = '0',
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -57,7 +57,7 @@ export class UserService {
      * @returns UserDto OK
      * @throws ApiError
      */
-    public static getApiUserGetItem(
+    public static getItemApi(
         id: string = '0',
     ): CancelablePromise<UserDto> {
         return __request(OpenAPI, {
@@ -81,7 +81,7 @@ export class UserService {
      * @returns UserItemDtoPaginatedList OK
      * @throws ApiError
      */
-    public static getApiUserGetList(
+    public static getListApi(
         sortColumn?: string,
         sortType?: 'Ascending' | 'Descending' | 'Unspecified',
         filterQuery?: SpelQuery,
@@ -108,7 +108,7 @@ export class UserService {
      * @returns UserDto OK
      * @throws ApiError
      */
-    public static getApiUserGetMyData(): CancelablePromise<UserDto> {
+    public static getMyDataApi(): CancelablePromise<UserDto> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/User/GetMyData',
@@ -123,7 +123,7 @@ export class UserService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiUserUpdate(
+    public static updateApi(
         requestBody?: UpdateUserCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -142,7 +142,7 @@ export class UserService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiUserUpdateMyPassword(
+    public static updateMyPasswordApi(
         password?: string,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -162,7 +162,7 @@ export class UserService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiUserUpdatePassword(
+    public static updatePasswordApi(
         requestBody?: UpdatePasswordCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -181,7 +181,7 @@ export class UserService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiUserUpdateRoles(
+    public static updateRolesApi(
         requestBody?: UpdateUserRolesCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {

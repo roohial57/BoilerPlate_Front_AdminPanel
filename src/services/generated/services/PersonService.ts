@@ -19,7 +19,7 @@ export class PersonService {
      * @returns any OK
      * @throws ApiError
      */
-    public static postApiPersonBackgroundJobSchedulerSample(
+    public static backgroundJobSchedulerSampleApi(
         requestBody?: BackgroundJobSchedulerSampleCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -34,7 +34,7 @@ export class PersonService {
      * @returns string OK
      * @throws ApiError
      */
-    public static postApiPersonCreate(
+    public static createApi(
         requestBody?: CreatePersonCommand,
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
@@ -53,7 +53,7 @@ export class PersonService {
      * @returns ExternalPersonDto OK
      * @throws ApiError
      */
-    public static getApiPersonGetExternalItem(
+    public static getExternalItemApi(
         id: number,
     ): CancelablePromise<ExternalPersonDto> {
         return __request(OpenAPI, {
@@ -73,7 +73,7 @@ export class PersonService {
      * @returns PersonDto OK
      * @throws ApiError
      */
-    public static getApiPersonGetItem(
+    public static getItemApi(
         id: string = '0',
     ): CancelablePromise<PersonDto> {
         return __request(OpenAPI, {
@@ -98,7 +98,7 @@ export class PersonService {
      * @returns PersonDtoPaginatedList OK
      * @throws ApiError
      */
-    public static getApiPersonGetList(
+    public static getListApi(
         personId?: number,
         sortColumn?: string,
         sortType?: 'Ascending' | 'Descending' | 'Unspecified',
@@ -130,7 +130,7 @@ export class PersonService {
      * @returns PersonDtoPaginatedList OK
      * @throws ApiError
      */
-    public static getApiPersonGetListByDapper(
+    public static getListByDapperApi(
         personId?: number,
         pageNumber?: number,
         pageSize?: number,
@@ -154,7 +154,7 @@ export class PersonService {
      * @returns any OK
      * @throws ApiError
      */
-    public static putApiPersonUpdate(
+    public static updateApi(
         requestBody?: UpdatePersonCommand,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {

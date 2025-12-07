@@ -13,7 +13,7 @@ export class AuthService {
      * @returns LoginResultDto OK
      * @throws ApiError
      */
-    public static putApiAuthLogin(
+    public static loginApi(
         requestBody?: LoginCommand,
     ): CancelablePromise<LoginResultDto> {
         return __request(OpenAPI, {

@@ -10,6 +10,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import UserList from '../components/UserList.vue';
-export default defineComponent({ name: 'UserView', components: { UserList } });
+import UserList from '../components/UserListByStore.vue';
+export default defineComponent({ name: 'UserView', components: { "UserList":UserList } });
 </script>

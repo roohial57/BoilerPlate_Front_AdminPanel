@@ -13,7 +13,7 @@ export class EnumService {
      * @returns EnumDto OK
      * @throws ApiError
      */
-    public static getApiEnumGet(
+    public static getApi(
         enumName: string,
     ): CancelablePromise<Array<EnumDto>> {
         return __request(OpenAPI, {
@@ -29,7 +29,7 @@ export class EnumService {
      * @returns EnumListItemDto OK
      * @throws ApiError
      */
-    public static getApiEnumGetList(): CancelablePromise<Array<EnumListItemDto>> {
+    public static getListApi(): CancelablePromise<Array<EnumListItemDto>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/Enum/GetList',

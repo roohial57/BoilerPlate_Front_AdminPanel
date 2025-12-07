@@ -1,11 +1,11 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import App from './App.vue';
-import router from './router';
-import registerGlobalComponents from './global-components';
+import App from './vue-ui/App.vue';
+import router from './vue-ui/router';
+import registerGlobalComponents from './vue-ui/global-components';
 import { loadAppConfig } from './AppConfig';
 import { OpenAPI } from './services/generated/core/OpenAPI';
-import Notifications from './components/common/NotificationPlugin'
+import Notifications from './vue-ui/components/common/NotificationPlugin'
 
 async function initApp() {
   try {
