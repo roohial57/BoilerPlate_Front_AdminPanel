@@ -11,7 +11,7 @@ const extendDir = './src/services/';
 generate({
   input: swaggerUrl,
   output: generatedDir,
-  httpClient: 'fetch',
+  httpClient: 'axios',
 })
   .then(() => {
     console.log('API client generated successfully!');

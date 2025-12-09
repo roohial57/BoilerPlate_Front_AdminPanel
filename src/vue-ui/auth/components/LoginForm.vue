@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input v-model="email" placeholder="Email" />
+    <input v-model="userName" placeholder="UserName" />
     <input v-model="password" placeholder="Password" type="password" />
     <button type="submit">Login</button>
   </form>
@@ -8,17 +8,17 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '@/store/auth/useAuthStore';
 
 export default defineComponent({
   setup() {
-    const email = ref('');
-    const password = ref('');
+    const userName = ref('admin');
+    const password = ref('Admin123!');
     const auth = useAuthStore();
-    function onSubmit() {
-      auth.login(email.value, password.value);
+    async function onSubmit() {
+      await auth.actions.login(userName.value, password.value);
     }
-    return { email, password, onSubmit };
+    return { userName, password, onSubmit };
   },
 });
 </script>

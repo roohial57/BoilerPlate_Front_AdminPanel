@@ -1,37 +1,56 @@
-import { defineStore } from 'pinia';
-import type { AuthModel } from '../adapters/authAdapter';
 
-export interface AuthUser {
-  id: string;
-  username: string;
-  fullName?: string;
-  roles?: string[];
-}
+import { storeManager } from "../PiniaStoreManager";
+import router from "@/router";
+import { AuthService, LoginCommand, LoginResultDto, UserService } from "@/services/generated/index";
+import axios from 'axios';
 
-export const useAuthStore = defineStore('auth', {
+export const useAuthStore = () => storeManager.registerStore({
+  id: "user",
   state: () => ({
-    isAuthenticated: false as boolean,
-    user: null as AuthUser | null,
+    token: null as string | null,
+    userName: null as string | null,
+    expireAt: null as Date | null,
+    user: null,
   }),
+  getters: {},
   actions: {
-    login(email: string, password: string) {
-      // Dummy login
-      this.isAuthenticated = true;
-      this.user = { id: 1, email };
-    },
-    loginWithModel(userModel: AuthModel) {
-      // Login using the mapped model from adapter
-      this.isAuthenticated = true;
-      this.user = {
-        id: userModel.id,
-        username: userModel.username,
-        fullName: userModel.fullName,
-        roles: userModel.roles,
+    async login(username: string, password: string) {
+      const req: LoginCommand = {
+        username: username,
+        password: password,
       };
+      const res = await AuthService.loginApi(req);
+      this.token = res.token;
+      this.userName = res.userName;
+      this.expireAt = res.expireAt;
+      this.setAxiosInterceptors();
+      router.push(router.currentRoute().query.url);
     },
-    logout() {
-      this.isAuthenticated = false;
+    clearToken() {
+      this.token = null;
+      this.userName = null;
+      this.expireAt = null;
       this.user = null;
     },
-  },
+    setAxiosInterceptors() {
+      axios.interceptors.request.use(config => {
+        if (this.token) {
+          config.headers.Authorization = `Bearer ${this.token}`;
+        }
+        return config;
+      });
+
+      axios.interceptors.response.use(
+        response => response,
+        async error => {
+          const originalRequest = error.config;
+          if (error.response?.status === 401) {
+            window.location.href = `/auth?url=${router.currentRoute().path}`;
+          }
+
+          return Promise.reject(error);
+        }
+      );
+    },
+  }
 });

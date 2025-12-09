@@ -1,13 +1,15 @@
 import { createApp } from 'vue';
-import { createPinia } from 'pinia';
+import { storeManager } from './store/PiniaStoreManager';
 import App from './vue-ui/App.vue';
-import router from './vue-ui/router';
+import router from './vue-ui/vue-router';
 import registerGlobalComponents from './vue-ui/global-components';
 import { loadAppConfig } from './AppConfig';
 import { OpenAPI } from './services/generated/core/OpenAPI';
-import Notifications from './vue-ui/components/common/NotificationPlugin'
+import Notifications from './vue-ui/components/common/NotificationPlugin';
+import { useAuthStore } from "./store/auth/useAuthStore";
 
 async function initApp() {
+
   try {
     // Load app configuration
     const config = await loadAppConfig();
@@ -17,6 +19,8 @@ async function initApp() {
     if (config.apiVersion) {
       OpenAPI.VERSION = config.apiVersion;
     }
+
+
   } catch (error) {
     console.error('Failed to load app-config.json', error);
     // Show user-friendly error message
@@ -45,11 +49,14 @@ async function initApp() {
     alert('یک خطای ناگهانی رخ داده است!');
   };
 
-  app.use(createPinia());
+  app.use(storeManager.pinia);
+  useAuthStore().actions.setAxiosInterceptors();
   app.use(router);
   registerGlobalComponents(app);
   app.use(Notifications);
   app.mount('#app');
+  // set auth
 }
 
 initApp();
+
