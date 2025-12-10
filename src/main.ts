@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { storeManager } from './store/PiniaStoreManager';
 import App from './vue-ui/App.vue';
-import router from './vue-ui/vue-router';
+import router from './vue-ui/router';
 import registerGlobalComponents from './vue-ui/global-components';
 import { loadAppConfig } from './AppConfig';
 import { OpenAPI } from './services/generated/core/OpenAPI';
