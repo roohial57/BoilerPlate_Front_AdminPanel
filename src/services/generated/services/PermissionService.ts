@@ -2,16 +2,16 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AppPermissionTreeItem } from '../models/AppPermissionTreeItem';
+import type { AppPermissionTreeNode } from '../models/AppPermissionTreeNode';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class PermissionService {
     /**
-     * @returns AppPermissionTreeItem OK
+     * @returns AppPermissionTreeNode OK
      * @throws ApiError
      */
-    public static getListApi(): CancelablePromise<Array<AppPermissionTreeItem>> {
+    public static getListApi(): CancelablePromise<AppPermissionTreeNode> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/Permission/GetList',

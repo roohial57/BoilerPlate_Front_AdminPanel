@@ -6,6 +6,7 @@ export type UserDto = {
     id?: string;
     userName?: string | null;
     fullName?: string | null;
+    isAdmin?: boolean;
     roles?: Array<string> | null;
 };
 

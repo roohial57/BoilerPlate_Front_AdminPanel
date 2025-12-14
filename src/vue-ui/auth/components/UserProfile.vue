@@ -24,13 +24,13 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue';
-import { useAuthStore, AuthUser } from '../store/useAuthStore';
+import { authStore, AuthUser } from '../store/authStore';
 import { AuthModel, loginAndGetUser } from '../adapters/authAdapter';
 
 export default defineComponent({
   name: 'UserProfile',
   setup() {
-    const authStore = useAuthStore();
+    const authStore = authStore();
     const loading = ref(false);
 
     const user = computed(() => authStore.user);

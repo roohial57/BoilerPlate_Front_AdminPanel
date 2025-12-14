@@ -1,4 +1,4 @@
-import router from './vue-ui/vue-router';
+import router from './vue-ui/router';
 import { useRoute } from 'vue-router'
 
 

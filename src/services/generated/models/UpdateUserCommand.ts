@@ -5,5 +5,6 @@
 export type UpdateUserCommand = {
     id?: string;
     fullName?: string | null;
+    isAdmin?: boolean;
 };
 

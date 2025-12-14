@@ -8,13 +8,13 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { useAuthStore } from '@/store/auth/useAuthStore';
+import { authStore } from '@/store/auth/authStore';
 
 export default defineComponent({
   setup() {
     const userName = ref('admin');
     const password = ref('Admin123!');
-    const auth = useAuthStore();
+    const auth = authStore();
     async function onSubmit() {
       await auth.actions.login(userName.value, password.value);
     }

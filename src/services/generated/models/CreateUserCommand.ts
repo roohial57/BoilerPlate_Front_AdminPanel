@@ -6,5 +6,6 @@ export type CreateUserCommand = {
     username?: string | null;
     password?: string | null;
     fullName?: string | null;
+    isAdmin?: boolean;
 };
 

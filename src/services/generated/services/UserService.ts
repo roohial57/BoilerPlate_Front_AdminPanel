@@ -138,19 +138,18 @@ export class UserService {
         });
     }
     /**
-     * @param password
+     * @param requestBody
      * @returns any OK
      * @throws ApiError
      */
     public static updateMyPasswordApi(
-        password?: string,
+        requestBody?: string,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PUT',
             url: '/api/User/UpdateMyPassword',
-            query: {
-                'password': password,
-            },
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 401: `Unauthorized`,
                 403: `Forbidden`,

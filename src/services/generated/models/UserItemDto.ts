@@ -6,5 +6,6 @@ export type UserItemDto = {
     id?: string;
     userName?: string | null;
     fullName?: string | null;
+    isAdmin?: boolean;
 };
 

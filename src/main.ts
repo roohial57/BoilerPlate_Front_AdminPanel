@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
-import { storeManager } from './store/PiniaStoreManager';
+import { storeManager } from './store/StoreManager';
 import App from './vue-ui/App.vue';
-import router from './vue-ui/vue-router';
+import router from './vue-ui/router';
 import registerGlobalComponents from './vue-ui/global-components';
 import { loadAppConfig } from './AppConfig';
-import { OpenAPI } from './services/generated/core/OpenAPI';
+import { OpenAPI } from '@/services/generated/core/OpenAPI';
 import Notifications from './vue-ui/components/common/NotificationPlugin';
-import { useAuthStore } from "./store/auth/useAuthStore";
+import { authStore } from "./store/auth/authStore";
 
 async function initApp() {
 
@@ -50,7 +50,7 @@ async function initApp() {
   };
 
   app.use(storeManager.pinia);
-  useAuthStore().actions.setAxiosInterceptors();
+  authStore().setAxiosInterceptors();
   app.use(router);
   registerGlobalComponents(app);
   app.use(Notifications);

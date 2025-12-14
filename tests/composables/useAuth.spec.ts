@@ -1,6 +1,6 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { useAuth } from '@/composables/useAuth'
-import { useAuthStore } from '@/features/auth/store/useAuthStore'
+import { authStore } from '@/features/auth/store/authStore'
 
 describe('useAuth composable', () => {
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('useAuth composable', () => {
   });
 
   it('reflects login state', () => {
-    const store = useAuthStore();
+    const store = authStore();
     store.login('ali@email.com', 'pass');
     const { isAuthenticated, user } = useAuth();
     expect(isAuthenticated).toBe(true);

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p>Total users: {{ getters.userCount }}</p>
+    <p>Total users: {{ store.userCount }}</p>
     <ul>
-      <li v-for="u in refs.users" :key="u.id">{{ u.name }}</li>
+      <li v-for="u in store.users" :key="u.id">{{ u.userName }}--{{ u.fullName }}--{{ u.isAdmin }}</li>
     </ul>
   </div>
 </template>
@@ -11,7 +11,7 @@
 import { onMounted } from "vue";
 import { userStore } from '@/store/user/userStore';
 
-const { refs, actions, getters } = userStore;
+const store = userStore;
 
-onMounted(() => actions.loadUsers());
+onMounted(() => store.loadUsers());
 </script>

@@ -7,7 +7,7 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
-export type { AppPermissionTreeItem } from './models/AppPermissionTreeItem';
+export type { AppPermissionTreeNode } from './models/AppPermissionTreeNode';
 export type { BackgroundJobSchedulerSampleCommand } from './models/BackgroundJobSchedulerSampleCommand';
 export type { CreatePersonCommand } from './models/CreatePersonCommand';
 export type { CreateRoleCommand } from './models/CreateRoleCommand';
