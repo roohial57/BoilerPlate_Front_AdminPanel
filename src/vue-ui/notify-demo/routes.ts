@@ -2,9 +2,9 @@ import type { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/auth',
-    name: 'Auth',
-    component:()=> import('./views/AuthView.vue'),
+    path: '/notify',
+    name: 'NotifyDemo',
+    component: ()=> import('./views/NotifyDemo.vue'),
   },
 ];
 

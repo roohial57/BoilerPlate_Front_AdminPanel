@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-const userRoutes: RouteRecordRaw[] = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/users',
     name: 'UserList',
@@ -8,4 +8,4 @@ const userRoutes: RouteRecordRaw[] = [
   },
 ];
 
-export default userRoutes;
+export default routes;

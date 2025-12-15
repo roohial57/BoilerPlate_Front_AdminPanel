@@ -7,11 +7,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import  Notifications  from "./components/common/NotificationPlugin/Notifications.vue";
 
 export default defineComponent({
   name: "App",
-  mounted() {
+  components: {
+    notifications: Notifications,
   },
+  mounted() {},
 });
 </script>
 <style lang="scss">

@@ -16,7 +16,7 @@ export default defineComponent({
     const password = ref('Admin123!');
     const auth = authStore();
     async function onSubmit() {
-      await auth.actions.login(userName.value, password.value);
+      await auth.login(userName.value, password.value);
     }
     return { userName, password, onSubmit };
   },

@@ -1,8 +1,5 @@
 import type { App, Plugin } from 'vue';
-import Notifications from './Notifications.vue';
-import { createNotificationStore, notificationInjectionKey } from './store';
-
-const store = createNotificationStore();
+import { notifyStore } from '@/store/notification/notifyStore';
 
 const NotificationPlugin: Plugin = {
   install(app: App) {
@@ -10,15 +7,9 @@ const NotificationPlugin: Plugin = {
       return;
     }
 
-    app.component('notifications', Notifications);
-    app.component('Notifications', Notifications);
-    app.provide(notificationInjectionKey, store);
-    app.config.globalProperties.$notify = store.notify;
+    app.config.globalProperties.$notification = notifyStore();
   },
 };
 
 export default NotificationPlugin;
-
-export { useNotificationService } from './store';
-export type { NotificationItem, NotificationOptions, NotificationType } from './types';
 

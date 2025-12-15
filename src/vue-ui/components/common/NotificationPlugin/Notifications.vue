@@ -24,11 +24,13 @@
 </template>
 
 <script setup lang="ts">
-import { useNotificationService } from './store';
+import { notifyStore } from '@/store/notification/notifyStore';
+import { computed } from 'vue';
 
 defineOptions({ name: 'Notifications' });
-
-const { notifications, dismiss } = useNotificationService();
+const store = notifyStore();
+const notifications = computed(() => store.items);
+const dismiss = store.dismiss;
 </script>
 
 <style scoped lang="scss">

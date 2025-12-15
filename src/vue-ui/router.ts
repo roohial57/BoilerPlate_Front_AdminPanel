@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouterOptions } from 'vue-router';
 import authRoutes from './auth/routes';
 import userRoutes from './user/routes';
+import notifyRoutes from './notify-demo/routes';
 
 const routes = [
   {
@@ -9,6 +10,7 @@ const routes = [
   },
   ...authRoutes,
   ...userRoutes,
+  ...notifyRoutes,
 ];
 
 const router = createRouter({
