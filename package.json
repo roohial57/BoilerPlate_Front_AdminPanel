@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest",
+    "test": "vitest --watch",
     "gen": "ts-node scripts/generate-api.ts"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/test-utils": "^2.4.4",
     "@vue/tsconfig": "^0.8.1",
+    "jsdom": "^27.3.0",
     "openapi-typescript-codegen": "^0.29.0",
     "sass-embedded": "^1.93.3",
     "ts-node": "^10.9.2",
