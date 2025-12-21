@@ -7,6 +7,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest",
+    "e2e": "cd tests/e2e && npx playwright test && cd ../..",
+    "e2e-ui": "cd tests/e2e && npx playwright test --ui && cd ../..",
     "gen": "ts-node scripts/generate-api.ts"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/test-utils": "^2.4.4",

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>Total users: {{ store.userCount }}</p>
+    <p>Total users: 
+      <span>{{ store.userCount }}</span>
+    </p>
     <ul>
       <li v-for="u in store.users" :key="u.id">{{ u.userName }}--{{ u.fullName }}--{{ u.isAdmin }}</li>
     </ul>
