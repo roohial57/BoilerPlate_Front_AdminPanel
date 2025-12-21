@@ -46,7 +46,7 @@ async function initApp() {
     // sendErrorToServer(err);
 
     // نمایش پیام کاربر پسند
-    alert('یک خطای ناگهانی رخ داده است!');
+    //alert('یک خطای ناگهانی رخ داده است!');
   };
 
   app.use(storeManager.pinia);

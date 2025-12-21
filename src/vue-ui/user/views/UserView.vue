@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>User List</h2>
-    <button class="btn btn-default btn-block" @click="reloadUserList">
+    <button class="btn btn-default btn-block" @click="reloadUserList" id="refresh">
       Refresh
     </button>
     <UserList />
