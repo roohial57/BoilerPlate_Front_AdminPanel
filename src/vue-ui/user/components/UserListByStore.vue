@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Total users: 
-      <span>{{ store.userCount }}</span>
+      <span data-testid="userCount">{{ store.userCount }}</span>
     </p>
     <ul>
       <li v-for="u in store.users" :key="u.id">{{ u.userName }}--{{ u.fullName }}--{{ u.isAdmin }}</li>
