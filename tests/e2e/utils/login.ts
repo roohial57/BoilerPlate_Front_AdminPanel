@@ -1,8 +1,8 @@
-import { Page } from "@playwright/test";
+import { Page, test } from "@playwright/test";
 
 const adminUsername = 'admin';
 const adminPassword = 'Admin123!';
-const adminStoragePath = 'storage/admin.json';
+const adminStoragePath = 'tests/e2e/storage/admin.json';
 
 
 export async function login(page: Page, username = adminUsername, password = adminPassword) {
@@ -26,6 +26,6 @@ export async function setupLogins() {
   await setupLogin(adminStoragePath, adminUsername, adminPassword)
 }
 
-// export useAdminStorage:()=>{
-
-// }
+export function useAdminLogin() {
+  test.use({ storageState: adminStoragePath });
+}
