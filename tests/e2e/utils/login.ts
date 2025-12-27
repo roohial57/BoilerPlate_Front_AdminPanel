@@ -2,7 +2,7 @@ import { Page, test } from "@playwright/test";
 
 const adminUsername = 'admin';
 const adminPassword = 'Admin123!';
-const adminStoragePath = 'tests/e2e/storage/admin.json';
+const adminStoragePath = 'storage/admin.json';
 
 
 export async function login(page: Page, username = adminUsername, password = adminPassword) {

@@ -9,8 +9,8 @@
     "test": "cd tests/unit && npx vitest  --run --config vitest.config.ts && cd ../..",
     "test:w": "cd tests/unit && npx vitest --watch  --config vitest.config.ts && cd ../..",
     "test:ui": "cd tests/unit && npx vitest --ui  --config vitest.config.ts && cd ../..",
-    "e2e": "cd tests/e2e && npx playwright test && cd ../..",
-    "e2e-ui": "cd tests/e2e && npx playwright test --ui && cd ../..",
+    "e2e": "cd tests/e2e && npm exec playwright test && cd ../..",
+    "e2e-ui": "cd tests/e2e && npm exec -- playwright test --ui && cd ../..",
     "gen": "ts-node scripts/generate-api.ts"
   },
   "dependencies": {
