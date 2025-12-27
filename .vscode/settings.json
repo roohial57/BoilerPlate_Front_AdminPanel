@@ -1,0 +1,15 @@
+// .vscode/settings.json پروژه
+{
+  // در صورتی که افزونه به‌صورت خودکار Vitest رو پیدا نکند
+  "vitest.enable": true,
+
+  // دستور اجرای خط فرمان تست در پروژه شما
+  // اگر از npm scripts استفاده می‌کنید:
+  "vitest.commandLine": "npx vitest",
+  
+  "files.exclude": {
+    "**/tests/e2e/node_modules": true,
+    "**/tests/unit/node_modules": true
+  }
+
+}

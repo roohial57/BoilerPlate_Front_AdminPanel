@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@vitest/ui": "^1.6.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.1.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.4.0"
+  }
+}

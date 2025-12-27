@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest",
+    "test": "cd tests/unit && npx vitest  --run --config vitest.config.ts && cd ../..",
+    "test:w": "cd tests/unit && npx vitest --watch  --config vitest.config.ts && cd ../..",
+    "test:ui": "cd tests/unit && npx vitest --ui  --config vitest.config.ts && cd ../..",
     "e2e": "cd tests/e2e && npx playwright test && cd ../..",
     "e2e-ui": "cd tests/e2e && npx playwright test --ui && cd ../..",
     "gen": "ts-node scripts/generate-api.ts"
@@ -18,10 +20,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
-    "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^5.0.4",
-    "@vue/test-utils": "^2.4.4",
     "@vue/tsconfig": "^0.8.1",
     "openapi-typescript-codegen": "^0.29.0",
     "posthtml": "^0.16.7",
@@ -29,7 +28,6 @@
     "sass-embedded": "^1.93.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "vite": "^5.2.8",
-    "vitest": "^1.4.0"
+    "vite": "^5.2.8"
   }
 }
