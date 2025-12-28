@@ -10,6 +10,7 @@
   "files.exclude": {
     "**/tests/e2e/node_modules": true,
     "**/tests/unit/node_modules": true
-  }
+  },
+    "vitest.configSearchPatternInclude": "**/vitest.config.ts",
 
 }
