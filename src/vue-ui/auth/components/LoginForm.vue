@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input v-model="userName" placeholder="UserName" />
+    <input v-model="username" placeholder="Username" />
     <input v-model="password" placeholder="Password" type="password" />
     <button type="submit">Login</button>
   </form>
@@ -12,13 +12,13 @@ import { authStore } from '@/store/auth/authStore';
 
 export default defineComponent({
   setup() {
-    const userName = ref('admin');
+    const username = ref('admin');
     const password = ref('Admin123!');
     const auth = authStore();
     async function onSubmit() {
-      await auth.login(userName.value, password.value);
+      await auth.login(username.value, password.value);
     }
-    return { userName, password, onSubmit };
+    return { username, password, onSubmit };
   },
 });
 </script>

@@ -1,4 +1,5 @@
 import { Page, test } from "@playwright/test";
+import config from '../playwright.config';
 
 const adminUsername = 'admin';
 const adminPassword = 'Admin123!';
@@ -6,8 +7,10 @@ const adminStoragePath = 'storage/admin.json';
 
 
 export async function login(page: Page, username = adminUsername, password = adminPassword) {
-  await page.goto('http://localhost:5173');
-  await page.locator('input[placeholder="UserName"]').fill(username);
+  const baseURL = config.use?.baseURL as string;
+  await page.goto(baseURL);
+  await page.waitForSelector('input[placeholder="Username"]');
+  await page.locator('input[placeholder="Username"]').fill(username);
   await page.locator('input[placeholder="Password"]').fill(password);
   page.locator('button[type="submit"]').click();
   await page.waitForNavigation();

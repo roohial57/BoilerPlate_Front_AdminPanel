@@ -4,7 +4,7 @@
 /* eslint-disable */
 export type UserDto = {
     id?: string;
-    userName?: string | null;
+    username?: string | null;
     fullName?: string | null;
     isAdmin?: boolean;
     roles?: Array<string> | null;

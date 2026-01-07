@@ -10,6 +10,9 @@
 `Playwright Test for VSCode`
 
 
+### Set host url
+Before test running, the front project must be served and that url set in `playwright.config.ts --> baseURL`
+
 
 ### Use testid
 You can use the `data-testid` attribute to access elements in tests.  

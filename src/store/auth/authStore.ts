@@ -8,7 +8,7 @@ export const authStore = () => storeManager.registerStore({
   id: "auth",
   state: () => ({
     token: null as string | null,
-    userName: null as string | null,
+    username: null as string | null,
     expireAt: null as Date | null,
     user: null,
   }),
@@ -31,12 +31,12 @@ export const authStore = () => storeManager.registerStore({
     },
     setLoginData(loginResult: LoginResultDto) {
       this.token = loginResult.token;
-      this.userName = loginResult.userName;
+      this.username = loginResult.username;
       this.expireAt = loginResult.expireAt;
     },
     clearToken() {
       this.token = null;
-      this.userName = null;
+      this.username = null;
       this.expireAt = null;
       this.user = null;
     },

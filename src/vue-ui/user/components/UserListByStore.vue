@@ -4,7 +4,7 @@
       <span data-testid="userCount">{{ store.userCount }}</span>
     </p>
     <ul>
-      <li v-for="u in store.users" :key="u.id">{{ u.userName }}--{{ u.fullName }}--{{ u.isAdmin }}</li>
+      <li v-for="u in store.users" :key="u.id">{{ u.username }}--{{ u.fullName }}--{{ u.isAdmin }}</li>
     </ul>
   </div>
 </template>

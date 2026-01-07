@@ -5,6 +5,10 @@ import removeAttrs from 'posthtml-remove-attributes'
 
 
 export default defineConfig({
+  preview: {
+    port: 5173,
+    strictPort: true
+  },
   plugins: [vue(),
     {
       name: 'remove-test-ids',
